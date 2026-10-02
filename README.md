@@ -2,7 +2,7 @@
 
 **Boceto público estático** para revisar la presentación de la lista mayorista en escritorio y celular.
 
-- **Preview:** https://condegraphics.github.io/granja-don-silvio-lista-precios/
+- **Preview temporal:** https://8765-ix553rnnt9xcblzn6ckcd-d498c742.us1.manus.computer/ (disponible mientras siga activa esta sesión).
 - **Repositorio:** https://github.com/condegraphics/granja-don-silvio-lista-precios
 - **Rama de trabajo:** `feat/lista-precios-estatica`
 - **Fuente del snapshot:** Hoja maestra de Google Sheets, leída el 2 de octubre de 2026.
@@ -28,4 +28,4 @@ El menú superior salta directamente a cada categoría. En escritorio las modali
 
 ## Publicación
 
-La página está configurada como preview de GitHub Pages desde la rama de trabajo. El dominio de producción `lagranjadonsilvio.com` no fue tocado.
+GitHub Pages todavía no está habilitado en el repositorio. El dominio de producción `lagranjadonsilvio.com` no fue tocado.
