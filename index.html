@@ -58,15 +58,19 @@
           </nav>
         </details>
         <details class="search-menu" id="search-menu">
-          <summary class="search-trigger" aria-label="Buscar productos" title="Buscar productos">
+          <summary class="search-trigger" aria-label="Abrir búsqueda de productos" aria-controls="search-form" aria-expanded="false" title="Abrir búsqueda de productos">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="10.8" cy="10.8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
-              <path d="m15.7 15.7 4.2 4.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+              <circle class="search-icon-lens" cx="10.8" cy="10.8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+              <path class="search-icon-handle" d="m15.7 15.7 4.2 4.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+              <path class="search-icon-close" d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
             </svg>
             <span class="visually-hidden">Buscar productos</span>
           </summary>
           <form class="search-panel" id="search-form" role="search" aria-label="Buscar en la lista de precios">
-            <label for="product-search">Buscar producto</label>
+            <div class="search-panel-heading">
+              <label for="product-search">Buscar producto</label>
+              <button class="search-close-button" id="close-search" type="button" aria-label="Cerrar búsqueda" title="Cerrar búsqueda"><span aria-hidden="true">×</span></button>
+            </div>
             <div class="search-field">
               <input id="product-search" name="q" type="search" placeholder="Ej.: bife ancho" autocomplete="off">
               <button class="search-clear" id="clear-search" type="button" hidden>Limpiar</button>

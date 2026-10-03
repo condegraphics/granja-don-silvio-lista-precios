@@ -5,9 +5,11 @@
   const categoryPanel = document.getElementById("category-panel");
   const categorySummary = categoryMenu?.querySelector("summary");
   const searchMenu = document.getElementById("search-menu");
+  const searchSummary = searchMenu?.querySelector("summary");
   const searchForm = document.getElementById("search-form");
   const searchInput = document.getElementById("product-search");
   const clearButton = document.getElementById("clear-search");
+  const closeSearchButton = document.getElementById("close-search");
   const searchStatus = document.getElementById("search-status");
   const menuSearchButton = document.getElementById("menu-search-button");
   const catalogue = document.querySelector(".catalogue");
@@ -59,6 +61,20 @@
     document.documentElement.style.scrollBehavior = previousScrollBehavior;
   }
 
+  function syncSearchMenuState() {
+    const isOpen = Boolean(searchMenu?.open);
+    searchSummary?.setAttribute("aria-label", isOpen ? "Cerrar búsqueda" : "Abrir búsqueda de productos");
+    searchSummary?.setAttribute("title", isOpen ? "Cerrar búsqueda" : "Abrir búsqueda de productos");
+    searchSummary?.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  function closeSearchMenu(restoreFocus = false) {
+    if (!searchMenu) return;
+    searchMenu.open = false;
+    syncSearchMenuState();
+    if (restoreFocus) searchSummary?.focus({ preventScroll: true });
+  }
+
   function syncCategoryMenuState(focusOnOpen = false) {
     if (!categoryMenu) return;
 
@@ -74,7 +90,7 @@
     document.body.classList.toggle("menu-open", modalOpen);
     backgroundRegions.forEach((region) => { region.inert = modalOpen; });
 
-    if (isOpen && searchMenu?.open) searchMenu.open = false;
+    if (isOpen && searchMenu?.open) closeSearchMenu();
 
     if (focusOnOpen && modalOpen) {
       requestAnimationFrame(() => categoryPanel?.querySelector(".menu-brand")?.focus({ preventScroll: true }));
@@ -156,8 +172,7 @@
     if (!firstMatch) return;
 
     if (searchMenu?.open) {
-      searchMenu.open = false;
-      searchMenu.querySelector("summary")?.focus({ preventScroll: true });
+      closeSearchMenu(true);
     }
 
     const headerHeight = document.querySelector(".site-header")?.getBoundingClientRect().height || 0;
@@ -177,10 +192,17 @@
   });
 
   searchMenu?.addEventListener("toggle", () => {
+    syncSearchMenuState();
     if (searchMenu.open) {
       if (categoryMenu?.open) closeCategoryMenu();
       requestAnimationFrame(() => searchInput.focus({ preventScroll: true }));
     }
+  });
+
+  closeSearchButton?.addEventListener("click", () => closeSearchMenu(true));
+
+  document.addEventListener("click", (event) => {
+    if (searchMenu?.open && !searchMenu.contains(event.target)) closeSearchMenu();
   });
 
   categoryPanel?.querySelectorAll("a[href^='#']").forEach((link) => {
@@ -221,8 +243,7 @@
     if (event.key !== "Escape") return;
 
     if (searchMenu?.open) {
-      searchMenu.open = false;
-      searchMenu.querySelector("summary")?.focus();
+      closeSearchMenu(true);
     } else if (categoryMenu?.open) {
       closeCategoryMenu(true);
     }
