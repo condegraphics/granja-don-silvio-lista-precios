@@ -26,23 +26,35 @@
       </a>
       <div class="header-controls">
         <details class="category-menu" id="category-menu">
-          <summary class="menu-trigger">Categorías</summary>
-          <nav class="category-panel" aria-label="Navegación por categorías">
-            <p class="menu-panel-title">Ir a categoría</p>
+          <summary class="menu-trigger" aria-label="Menú de categorías" aria-controls="category-panel">
+            <span class="menu-trigger-label">Categorías</span>
+            <span class="menu-trigger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+          </summary>
+          <nav class="category-panel" id="category-panel" aria-label="Navegación por categorías">
+            <div class="mobile-nav-top">
+              <a class="menu-brand" href="#inicio" aria-label="La Granja Don Silvio, inicio">
+                <img src="img/logo-la-granja-don-silvio.png" width="560" height="298" alt="La Granja Don Silvio — Frigorífico">
+              </a>
+            </div>
+            <p class="menu-panel-title">Lista mayorista · categorías</p>
             <ul class="category-links">
-              <li><a href="#cortes-de-carne">Cortes de Carne</a></li>
-              <li><a href="#cortes-de-cerdo">Cortes de Cerdo</a></li>
-              <li><a href="#pollo">Pollo</a></li>
-              <li><a href="#cajones-de-pollo">Cajones de Pollo</a></li>
-              <li><a href="#cortes-en-caja">Cortes en Caja</a></li>
-              <li><a href="#envasados-al-vacio">Envasados Al Vacío</a></li>
-              <li><a href="#cortes-con-hueso">Cortes con Hueso</a></li>
-              <li><a href="#achuras">Achuras</a></li>
-              <li><a href="#embutidos">Embutidos</a></li>
-              <li><a href="#animales">Animales</a></li>
-              <li><a href="#camara-de-media-res">Cámara de Media Res</a></li>
-              <li><a href="#otros">Otros</a></li>
+              <li><a href="#cortes-de-carne"><span>Cortes de Carne</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#cortes-de-cerdo"><span>Cortes de Cerdo</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#pollo"><span>Pollo</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#cajones-de-pollo"><span>Cajones de Pollo</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#cortes-en-caja"><span>Cortes en Caja</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#envasados-al-vacio"><span>Envasados Al Vacío</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#cortes-con-hueso"><span>Cortes con Hueso</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#achuras"><span>Achuras</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#embutidos"><span>Embutidos</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#animales"><span>Animales</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#camara-de-media-res"><span>Cámara de Media Res</span><span class="category-arrow" aria-hidden="true"></span></a></li>
+              <li><a href="#otros"><span>Otros</span><span class="category-arrow" aria-hidden="true"></span></a></li>
             </ul>
+            <div class="menu-panel-footer">
+              <p class="menu-footer-note">¿Buscás un producto puntual?</p>
+              <button class="menu-search-button" id="menu-search-button" type="button">Buscar producto <span class="menu-cta-arrow" aria-hidden="true">→</span></button>
+            </div>
           </nav>
         </details>
         <details class="search-menu" id="search-menu">
