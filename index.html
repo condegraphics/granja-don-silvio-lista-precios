@@ -24,7 +24,45 @@
       <a class="brand" href="#inicio" aria-label="La Granja Don Silvio, inicio">
         <img src="img/logo-la-granja-don-silvio.png" width="560" height="298" alt="La Granja Don Silvio — Frigorífico">
       </a>
-      <p class="preview-label"><span class="preview-dot" aria-hidden="true"></span>Boceto estático</p>
+      <div class="header-controls">
+        <details class="category-menu" id="category-menu">
+          <summary class="menu-trigger">Categorías</summary>
+          <nav class="category-panel" aria-label="Navegación por categorías">
+            <p class="menu-panel-title">Ir a categoría</p>
+            <ul class="category-links">
+              <li><a href="#cortes-de-carne">Cortes de Carne</a></li>
+              <li><a href="#cortes-de-cerdo">Cortes de Cerdo</a></li>
+              <li><a href="#pollo">Pollo</a></li>
+              <li><a href="#cajones-de-pollo">Cajones de Pollo</a></li>
+              <li><a href="#cortes-en-caja">Cortes en Caja</a></li>
+              <li><a href="#envasados-al-vacio">Envasados Al Vacío</a></li>
+              <li><a href="#cortes-con-hueso">Cortes con Hueso</a></li>
+              <li><a href="#achuras">Achuras</a></li>
+              <li><a href="#embutidos">Embutidos</a></li>
+              <li><a href="#animales">Animales</a></li>
+              <li><a href="#camara-de-media-res">Cámara de Media Res</a></li>
+              <li><a href="#otros">Otros</a></li>
+            </ul>
+          </nav>
+        </details>
+        <details class="search-menu" id="search-menu">
+          <summary class="search-trigger" aria-label="Buscar productos" title="Buscar productos">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="10.8" cy="10.8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+              <path d="m15.7 15.7 4.2 4.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+            </svg>
+            <span class="visually-hidden">Buscar productos</span>
+          </summary>
+          <form class="search-panel" id="search-form" role="search" aria-label="Buscar en la lista de precios">
+            <label for="product-search">Buscar producto</label>
+            <div class="search-field">
+              <input id="product-search" name="q" type="search" placeholder="Ej.: bife ancho" autocomplete="off">
+              <button class="search-clear" id="clear-search" type="button" hidden>Limpiar</button>
+            </div>
+            <p class="search-status" id="search-status" aria-live="polite">134 productos disponibles</p>
+          </form>
+        </details>
+      </div>
     </header>
 
     <main id="contenido">
@@ -40,11 +78,6 @@
           </div>
         </div>
       </section>
-
-      <nav class="category-nav" aria-label="Navegación por categorías">
-        <div class="nav-heading"><span class="nav-label">Ir a categoría</span><span class="nav-rule" aria-hidden="true"></span></div>
-        <ul><li><a href="#cortes-de-carne">Cortes de Carne</a></li><li><a href="#cortes-de-cerdo">Cortes de Cerdo</a></li><li><a href="#pollo">Pollo</a></li><li><a href="#cajones-de-pollo">Cajones de Pollo</a></li><li><a href="#cortes-en-caja">Cortes en Caja</a></li><li><a href="#envasados-al-vacio">Envasados Al Vacío</a></li><li><a href="#cortes-con-hueso">Cortes con Hueso</a></li><li><a href="#achuras">Achuras</a></li><li><a href="#embutidos">Embutidos</a></li><li><a href="#animales">Animales</a></li><li><a href="#camara-de-media-res">Cámara de Media Res</a></li><li><a href="#otros">Otros</a></li></ul>
-      </nav>
 
       <aside class="price-notice" aria-label="Condiciones de la lista">
         <span class="notice-mark" aria-hidden="true">!</span>
@@ -265,5 +298,6 @@
       <p class="footer-caption">Boceto de prueba · información tomada de la lista maestra el 2/10/2026 · sin sincronización automática</p>
     </footer>
   </div>
+  <script src="script.js" defer></script>
 </body>
 </html>

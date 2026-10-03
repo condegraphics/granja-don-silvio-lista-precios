@@ -27,7 +27,7 @@ jobs:
       - name: Preparar sitio estático
         run: |
           mkdir -p _site/img
-          cp index.html styles.css robots.txt .nojekyll _site/
+          cp index.html styles.css script.js robots.txt .nojekyll _site/
           cp img/logo-la-granja-don-silvio.png _site/img/
 
       - name: Cargar artefacto de Pages
