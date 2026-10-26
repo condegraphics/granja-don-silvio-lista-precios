@@ -1,0 +1,13 @@
+
+# ============================================================================
+# HARDENING CONDE GRAPHICS - Bloquear documentos internos
+# Los .md son notas de trabajo/briefs internos, no contenido del sitio.
+# ============================================================================
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.(md|markdown)$">
+    Require all denied
+  </FilesMatch>
+  <FilesMatch "^\.gitignore$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
